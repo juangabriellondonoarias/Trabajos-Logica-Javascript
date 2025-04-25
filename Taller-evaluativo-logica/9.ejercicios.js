@@ -30,7 +30,14 @@ function consultarRegistro() {
     let documento1=parseInt(prompt("Si desea ver tus datos, Digite el documento para ver los resultados"));
     if (documento1 == documento) {
         documento1=persona;
-        return documento1; 
+        return (documento1(alert(
+            `Documento es ${documento},
+            Nombre: ${nombres},
+            Apellido: ${apellidos},
+            Edad : ${edad},
+            Peso: ${peso} Kg,
+            Estatura: ${estatura}`
+        ))); 
     }else{
         console.log("error, ingrese el numero de documento bien escrito");
     }
