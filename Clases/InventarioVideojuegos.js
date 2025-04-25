@@ -38,6 +38,16 @@ class Inventario{
                 console.log("Error, indice o propiedad no válidos.");
         }
     }
+
+    buscarVideojuego(nombre) {
+        for (let i = 0; i < this.obtenerTodosVideojuegos().length; i++) {
+            if (this.#videojuegos[i].nombre === nombre) {
+                return this.#videojuegos[i];
+            }
+        }
+        return false;
+    }
+    
 }
 
 class Admin {
@@ -59,6 +69,18 @@ class Admin {
         console.log("Lista de todos los videojuegos:");
         console.table(this.inventario.obtenerTodosVideojuegos());
     }
+
+    actualizarVideojuego1(indice, propiedad, nuevoValor){
+        this.inventario.actualizarVideojuego(indice, propiedad, nuevoValor)
+    }
+
+    eliminarVideojuego1(indice){
+        this.inventario.eliminarVideojuego(indice)
+    }
+
+    buscarVideojuego1(nombre){
+        this.inventario.buscarVideojuego(nombre)
+    }
 }
     
 
@@ -73,7 +95,7 @@ console.log("--------------------------");
 
 console.log("Actualizaciones");
 inventario.actualizarVideojuego(0,"nombre", "Grand Theft Auto",);
-// inventario.actualizarVideojuego(0,"precio", 400000);
+inventario.actualizarVideojuego(0,"precio", 400000);
 inventario.actualizarVideojuego(1,"categoria", "RTS");
 console.table(inventario.obtenerTodosVideojuegos());
 
@@ -96,10 +118,17 @@ admin.agregarVideojuego({ nombre: "Roblox", precio: 150000, categoria: "Platafor
 console.log("Videojuegos despúes que el Administrador hizo todo lo que necesitaba");
 admin.verVideojuegos();
 
-console.log("---------------------");
+console.log("----------------------");
 
+console.log(admin.actualizarVideojuego1(1, "precio", 50));
+admin.verVideojuegos();
 
+console.log("-----------------");
 
+admin.eliminarVideojuego1(3);
+admin.verVideojuegos();
 
+console.log("------------------------------");
 
-
+console.log("Busqueda de videojuego");
+console.table(inventario.buscarVideojuego("Grand Theft Auto"));
