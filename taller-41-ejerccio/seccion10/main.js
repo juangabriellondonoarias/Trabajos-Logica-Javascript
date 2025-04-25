@@ -2,12 +2,12 @@
 el precio del producto. El usuario debe poder elegir de entre por lo menos cinco productos. Use diccionarios.*/
 
 const productos = {
-    "manzana": 1.5, 
-    "banana": 2.0,  
-    "naranja": 1.8,  
-    "pera": 2.2,    
-    "uva": 3.0,
-    "mandarina" : 2.4
+    "manzana": 1500, 
+    "banana": 500,  
+    "naranja": 500,  
+    "pera": 1200,    
+    "uva": 2000,
+    "mandarina" :600
 }
 
 while (true) {
